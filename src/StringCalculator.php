@@ -8,7 +8,12 @@ class StringCalculator
 {
     public function add(string $number): string
     {
-        return "0";
+        if(empty($number)){
+            return "0";
+        }
+        else{
+            return $number;
+        }
     }
 
 }

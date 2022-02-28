@@ -19,4 +19,15 @@ class StringCalculatorTest extends TestCase
         $this->assertEquals(expected: "0",actual: $result);
     }
 
+    /**
+     * @test
+     */
+    public function one_number_returns_that_number(){
+        $calculator = new StringCalculator();
+
+        $result = $calculator->add("1");
+
+        $this->assertEquals(expected: "1",actual: $result);
+    }
+
 }
