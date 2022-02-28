@@ -30,4 +30,16 @@ class StringCalculatorTest extends TestCase
         $this->assertEquals(expected: "1",actual: $result);
     }
 
+    /**
+    * @test
+    */
+    public function two_numbers_separated_by_comma_return_their_sum(){
+        $calculator = new StringCalculator();
+
+        $result = $calculator->add("4.2,2");
+
+        $this->assertEquals(expected: "6.2",actual: $result);
+    }
+
+
 }

@@ -11,8 +11,14 @@ class StringCalculator
         if(empty($number)){
             return "0";
         }
-        else{
+        else if(strpos($number,",") == false){
+            //check if input string contains comma
             return $number;
+        }
+        else{
+            $listNumbers = explode(',',$number);
+            return $listNumbers[0]+$listNumbers[1];
+
         }
     }
 
