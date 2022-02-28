@@ -85,5 +85,16 @@ class StringCalculatorTest extends TestCase
         $this->assertEquals(expected: "Number expected but NOT found.",actual: $result);
     }
 
+    /**
+     * @test
+     */
+    public function custom_separators_should_work_as_always(){
+        $calculator = new StringCalculator();
+
+        $result = $calculator->add("//;\n1;2");
+
+        $this->assertEquals(expected: "3",actual: $result);
+    }
+
 
 }
