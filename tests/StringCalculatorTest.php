@@ -63,5 +63,16 @@ class StringCalculatorTest extends TestCase
         $this->assertEquals(expected: "17",actual: $result);
     }
 
+    /**
+     * @test
+     */
+    public function delimiter_comma_followed_by_newline_is_invalid(){
+        $calculator = new StringCalculator();
+
+        $result = $calculator->add("175.2,\n35");
+
+        $this->assertEquals(expected: "Number expected but '\n' found at position 6.",actual: $result);
+    }
+
 
 }

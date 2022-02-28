@@ -16,9 +16,17 @@ class StringCalculator
             return $number;
         }
         else{
-            $listNumbers = preg_split('/[\n,]/',$number);
-            print_r($listNumbers);
-            return $result = array_sum($listNumbers);
+            print($number);
+            $errorPosition = strpos($number, ",\n");
+            $errorPosition++;//Because we always want to show the position of newline, not the comma that is found first.
+            if($errorPosition==true){
+                return "Number expected but '\n' found at position {$errorPosition}.";
+            }
+            else{
+                $listNumbers = preg_split('/[\n,]/',$number);
+                print_r($listNumbers);
+                return $result = array_sum($listNumbers);
+            }
         }
     }
 
