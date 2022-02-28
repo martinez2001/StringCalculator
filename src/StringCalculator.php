@@ -40,7 +40,7 @@ class StringCalculator
 
             else{
                 $listNumbers = preg_split('/[\n,]/',$number);
-                print_r($listNumbers);
+                //print_r($listNumbers);
                 $hasNegativeNumbers = false;
                 $negativeNumbers = "Negative not allowed: ";
                 foreach($listNumbers as $value){
