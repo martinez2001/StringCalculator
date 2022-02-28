@@ -16,7 +16,8 @@ class StringCalculator
             return $number;
         }
         else{
-            $listNumbers = explode(',',$number);
+            $listNumbers = preg_split('/[\n,]/',$number);
+            print_r($listNumbers);
             return $result = array_sum($listNumbers);
         }
     }

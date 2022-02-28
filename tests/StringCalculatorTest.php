@@ -52,5 +52,16 @@ class StringCalculatorTest extends TestCase
         $this->assertEquals(expected: "10",actual: $result);
     }
 
+    /**
+     * @test
+     */
+    public function add_newlines_as_separator(){
+        $calculator = new StringCalculator();
+
+        $result = $calculator->add("1\n2,3\n11");
+
+        $this->assertEquals(expected: "17",actual: $result);
+    }
+
 
 }
