@@ -17,8 +17,7 @@ class StringCalculator
         }
         else{
             $listNumbers = explode(',',$number);
-            return $listNumbers[0]+$listNumbers[1];
-
+            return $result = array_sum($listNumbers);
         }
     }
 

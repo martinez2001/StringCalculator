@@ -41,5 +41,16 @@ class StringCalculatorTest extends TestCase
         $this->assertEquals(expected: "6.2",actual: $result);
     }
 
+    /**
+     * @test
+     */
+    public function many_numbers_can_be_added(){
+        $calculator = new StringCalculator();
+
+        $result = $calculator->add("2,2,2,2,2");
+
+        $this->assertEquals(expected: "10",actual: $result);
+    }
+
 
 }
