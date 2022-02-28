@@ -13,7 +13,9 @@ class StringCalculator
             //$customSeparatorPosition = strpos($number,"//");
             //$customSeparatorPosition;//in order to jump into the position of the custom separator
             $customSeparator = $number[2];
-            $operation = substr($number,4,strlen($number));
+            $operationStartIndex = strpos($number,"\n");
+            $operationStartIndex++;
+            $operation = substr($number,$operationStartIndex,strlen($number));
             //echo $operation;
             $newInput = str_replace("$customSeparator",",",$operation);
             echo $newInput;
@@ -39,7 +41,21 @@ class StringCalculator
             else{
                 $listNumbers = preg_split('/[\n,]/',$number);
                 print_r($listNumbers);
-                return array_sum($listNumbers);
+                $hasNegativeNumbers = false;
+                $negativeNumbers = "Negative not allowed: ";
+                foreach($listNumbers as $value){
+                    if(str_contains($value,"-")){
+                        $hasNegativeNumbers = true;
+                        $negativeNumbers .=  $value;
+                        $negativeNumbers .= " ";
+                    }
+                }
+                if($hasNegativeNumbers){
+                    return $negativeNumbers;
+                }
+                else{
+                    return array_sum($listNumbers);
+                }
             }
         }
     }

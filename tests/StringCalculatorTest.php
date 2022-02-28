@@ -96,5 +96,16 @@ class StringCalculatorTest extends TestCase
         $this->assertEquals(expected: "3",actual: $result);
     }
 
+    /**
+     * @test
+     */
+    public function input_of_negative_numbers_is_invalid(){
+        $calculator = new StringCalculator();
+
+        $result = $calculator->add("2,-4,-5");
+
+        $this->assertEquals(expected: "Negative not allowed: -4 -5 ",actual: $result);
+    }
+
 
 }
