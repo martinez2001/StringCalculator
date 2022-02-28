@@ -16,11 +16,13 @@ class StringCalculator
             return $number;
         }
         else{
-            print($number);
-            $errorPosition = strpos($number, ",\n");
+            $errorPosition = strpos($number, ",\n");//check if input contains ,\n
             $errorPosition++;//Because we always want to show the position of newline, not the comma that is found first.
             if($errorPosition==true){
                 return "Number expected but '\n' found at position {$errorPosition}.";
+            }
+            else if(substr($number,-1) == ','){
+                return "Number expected but NOT found.";
             }
             else{
                 $listNumbers = preg_split('/[\n,]/',$number);

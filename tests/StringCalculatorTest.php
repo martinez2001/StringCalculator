@@ -74,5 +74,16 @@ class StringCalculatorTest extends TestCase
         $this->assertEquals(expected: "Number expected but '\n' found at position 6.",actual: $result);
     }
 
+    /**
+     * @test
+     */
+    public function missing_number_in_last_position_is_invalid(){
+        $calculator = new StringCalculator();
+
+        $result = $calculator->add("1,3,");
+
+        $this->assertEquals(expected: "Number expected but NOT found.",actual: $result);
+    }
+
 
 }
